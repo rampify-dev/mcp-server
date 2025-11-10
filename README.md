@@ -38,7 +38,7 @@ npm run build
 
 ## Usage
 
-### Quick Setup for a Project
+### Quick Setup for a Project (Claude CLI)
 
 **Recommended:** Configure MCP server per-project so each project knows its domain:
 
@@ -46,7 +46,8 @@ npm run build
 cd /path/to/your/project
 claude mcp add --scope local rampify "node" \
   "/path/to/rampify/packages/mcp-server/build/index.js" \
-  -e BACKEND_API_URL=http://localhost:3000 \
+  -e BACKEND_API_URL=https://www.rampify.dev \
+  -e API_KEY=sk_live_your_api_key_here \
   -e SEO_CLIENT_DOMAIN=your-domain.com
 
 # Reload your IDE window
@@ -57,19 +58,20 @@ Now you can use MCP tools **without specifying domain**:
 - `get_issues` - Automatically uses your project's domain
 - `crawl_site` - Automatically uses your project's domain
 
-### Global Setup (All Projects)
+### Global Setup (Claude CLI)
 
-For global access (must specify domain each time):
+For global access across all projects (must specify domain in each request):
 
 ```bash
 claude mcp add --scope user rampify "node" \
   "/path/to/rampify/packages/mcp-server/build/index.js" \
-  -e BACKEND_API_URL=http://localhost:3000
+  -e BACKEND_API_URL=https://www.rampify.dev \
+  -e API_KEY=sk_live_your_api_key_here
 
 # Reload your IDE window
 ```
 
-### Manual Configuration (Cursor Native)
+### Manual Configuration (Cursor)
 
 Add to your Cursor settings UI or `~/.cursor/config.json`:
 
@@ -82,7 +84,8 @@ Add to your Cursor settings UI or `~/.cursor/config.json`:
         "/absolute/path/to/rampify/packages/mcp-server/build/index.js"
       ],
       "env": {
-        "BACKEND_API_URL": "http://localhost:3000",
+        "BACKEND_API_URL": "https://www.rampify.dev",
+        "API_KEY": "sk_live_your_api_key_here",
         "SEO_CLIENT_DOMAIN": "your-domain.com"
       }
     }
@@ -90,7 +93,7 @@ Add to your Cursor settings UI or `~/.cursor/config.json`:
 }
 ```
 
-### In Claude Code
+### Manual Configuration (Claude Code)
 
 Add to your Claude Code MCP settings:
 
@@ -103,7 +106,9 @@ Add to your Claude Code MCP settings:
         "/absolute/path/to/rampify/packages/mcp-server/build/index.js"
       ],
       "env": {
-        "BACKEND_API_URL": "http://localhost:3000"
+        "BACKEND_API_URL": "https://www.rampify.dev",
+        "API_KEY": "sk_live_your_api_key_here",
+        "SEO_CLIENT_DOMAIN": "your-domain.com"
       }
     }
   }
@@ -111,6 +116,18 @@ Add to your Claude Code MCP settings:
 ```
 
 **Important:** Replace `/absolute/path/to/` with the actual path on your machine.
+
+---
+
+## Configuration Options
+
+### Environment Variables
+
+- **`BACKEND_API_URL`** (required): Rampify API endpoint - always use `https://www.rampify.dev`
+- **`API_KEY`** (required): Your API key from Rampify dashboard (starts with `sk_live_...`)
+- **`SEO_CLIENT_DOMAIN`** (optional): Default domain for this project (e.g., `yoursite.com`)
+- **`CACHE_TTL`** (optional): Cache duration in seconds (default: 3600)
+- **`LOG_LEVEL`** (optional): `debug`, `info`, `warn`, or `error` (default: `info`)
 
 ## How to Use Tools
 
