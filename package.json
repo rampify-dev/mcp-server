@@ -1,0 +1,40 @@
+{
+  "name": "@rampify/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server providing real-time SEO intelligence for AI coding tools",
+  "main": "build/index.js",
+  "type": "module",
+  "bin": {
+    "rampify-mcp": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "dev": "tsc && node build/index.js",
+    "watch": "tsc --watch",
+    "test": "echo \"Tests coming soon\" && exit 0"
+  },
+  "keywords": [
+    "mcp",
+    "seo",
+    "ai",
+    "cursor",
+    "claude",
+    "developer-tools"
+  ],
+  "author": "Rampify",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "axios": "^1.6.2",
+    "cheerio": "^1.1.2",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
