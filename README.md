@@ -54,7 +54,7 @@ The compiled MCP server will be in `build/index.js` - use this path in your conf
 Before configuring the MCP server, get your API key:
 
 1. **[Sign up for Rampify](https://www.rampify.dev)** (free to start)
-2. Go to your [Rampify dashboard](https://www.rampify.dev)
+2. Go to your [Rampify dashboard](https://www.rampify.dev/dashboard)
 3. Navigate to **Settings → API Keys**
 4. Click **"Generate New Key"**
 5. Copy the key (starts with `sk_live_...`)
@@ -796,11 +796,11 @@ Every response includes explicit `source` and `fetched_from` fields:
 Need help?
 - **[Documentation](https://www.rampify.dev/docs/mcp-server)** - Complete guides and tutorials
 - **[GitHub Issues](https://github.com/rampify-dev/mcp-server/issues)** - Report bugs or request features
-- **[Rampify Dashboard](https://www.rampify.dev)** - Manage your sites and API keys
+- **[Rampify Settings](https://www.rampify.dev/settings/api-keys)** - Manage your sites and API keys
 
 ## Learn More
 
-- **[What is Rampify?](https://www.rampify.dev)** - Product overview
+- **[What is Rampify?](https://www.rampify.dev/docs/introduction)** - Product overview
 - **[MCP Server Guide](https://www.rampify.dev/docs/mcp-server)** - Detailed documentation
 - **[Blog](https://www.rampify.dev/blog)** - SEO tips and product updates
 
